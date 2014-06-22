@@ -3,7 +3,11 @@ SaferstallsRails::Application.routes.draw do
   ActiveAdmin.routes(self)
   resources :restrooms
 
-  mount API::Base => '/api'
+  namespace :api do
+    namespace :v1 do
+      resources :restrooms
+    end
+  end
 
   get '/about', to: 'welcome#about'
   get '/signs', to: 'welcome#signs'

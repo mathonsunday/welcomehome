@@ -23,10 +23,10 @@ gem 'country_select'
 gem 'mail_form'
 gem 'simple_form', '~> 3.0.2'
 
-gem 'grape'
-gem 'grape-swagger'
-gem 'grape-kaminari'
-gem 'kaminari'
+# gem 'grape'
+# gem 'grape-swagger'
+# gem 'grape-kaminari'
+# gem 'kaminari'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta2'
