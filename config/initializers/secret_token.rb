@@ -11,6 +11,7 @@
 # if you're sharing your code publicly.
 SaferstallsRails::Application.configure do
 
-  config.secret_key_base = ENV['RAILS_SECRET_KEY']
+  # config.secret_key_base = ENV['RAILS_SECRET_KEY']
+  config.secret_key_base = 'e36c9a123faf0f5eb89dbc0250f7ab3d760bac3796fe41b7c47b5c3f256024c59d498cddda6fc3c1880e4f118cacf80edfa24a49da97b98ce01c02e5941ee54e'
 
 end
