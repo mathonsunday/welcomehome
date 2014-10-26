@@ -1,33 +1,33 @@
-class RestroomsController < ApplicationController
+class HomesController < ApplicationController
   respond_to :html, :json
 
-  before_filter :list_restrooms, only: [:index]
-  before_filter :find_restroom, only: [:show, :update, :edit, :destroy]
+  before_filter :list_homes, only: [:index]
+  before_filter :find_home, only: [:show, :update, :edit, :destroy]
 
   def index
     if params[:nearby]
       render :nearby, layout: false
     else
-      respond_with @restrooms
+      respond_with @homes
     end
   end
 
   def new
     if params[:guess]
-      @restroom = Restroom.new(permitted_params)
-      @restroom.reverse_geocode
+      @home = Home.new(permitted_params)
+      @home.reverse_geocode
       render 'new', layout: false
     else
-      @restroom = Restroom.new
+      @home = Home.new
     end
   end
 
   def create
-    @restroom = Restroom.new(permitted_params)
+    @home = Home.new(permitted_params)
 
-    if @restroom.save
-      flash[:notice] = I18n.t('restroom.flash.new', name: @restroom.name)
-      redirect_to @restroom
+    if @home.save
+      flash[:notice] = I18n.t('home.flash.new', name: @home.name)
+      redirect_to @home
     else
       display_errors
       render 'new'
@@ -35,55 +35,55 @@ class RestroomsController < ApplicationController
   end
 
   def update
-    if params[:restroom][:downvote]
-      Restroom.increment_counter(:downvote, @restroom.id)
-    elsif params[:restroom][:upvote]
-      Restroom.increment_counter(:upvote, @restroom.id)
-    elsif @restroom.update(permitted_params)
-      flash[:notice] = I18n.t('restroom.flash.updated')
+    if params[:home][:downvote]
+      Home.increment_counter(:downvote, @home.id)
+    elsif params[:home][:upvote]
+      Home.increment_counter(:upvote, @home.id)
+    elsif @home.update(permitted_params)
+      flash[:notice] = I18n.t('home.flash.updated')
     else
       display_errors
       render 'edit'
     end
 
-    redirect_to @restroom
+    redirect_to @home
   end
 
   def destroy
-    if @restroom.destroy
-      flash[:notice] = I18n.t('restroom.flash.deleted')
-      redirect_to restrooms_path
+    if @home.destroy
+      flash[:notice] = I18n.t('home.flash.deleted')
+      redirect_to homes_path
     else
       display_errors
-      redirect_to @restroom
+      redirect_to @home
     end
   end
 
 private
-  def list_restrooms
-    @restrooms = Restroom.all.page(params[:page])
-    @restrooms = if params[:search].present? || params[:map] == "1"
-      @restrooms.near([params[:lat], params[:long]], 20, :order => 'distance')
+  def list_homes
+    @homes = Home.all.page(params[:page])
+    @homes = if params[:search].present? || params[:map] == "1"
+      @homes.near([params[:lat], params[:long]], 20, :order => 'distance')
     else
-      @restrooms.reverse_order
+      @homes.reverse_order
     end
   end
 
   def display_errors
-    if @restroom.errors.any?
-      errors = @restroom.errors.each do |attribute, message|
-        flash[:alert] = I18n.t('restroom.flash.field')
+    if @home.errors.any?
+      errors = @home.errors.each do |attribute, message|
+        flash[:alert] = I18n.t('home.flash.field')
       end
     else
-      flash[:alert] = I18n.t('restroom.flash.unexpected')
+      flash[:alert] = I18n.t('home.flash.unexpected')
     end
   end
 
-  def find_restroom
-    @restroom = Restroom.find(params[:id])
+  def find_home
+    @home = Home.find(params[:id])
   end
 
   def permitted_params
-    params.require(:restroom).permit!
+    params.require(:home).permit!
   end
 end
