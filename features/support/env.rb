@@ -7,7 +7,7 @@
 require 'cucumber/rails'
 
 # Seed the db for testing
-load "#{Rails.root}/db/seeds.rb"
+
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
