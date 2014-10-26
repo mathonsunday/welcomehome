@@ -1,53 +1,52 @@
 en:
   activerecord:
     attributes:
-      restroom:
+      home:
         # only overridden attributes here, defaults work as expected
         # (e.g. database field 'city' will be appear as 'City')
         name: 'Location/Place/Business Name'
         street: 'Street Address'
         state: 'State/Province'
-        access: 'Accessible?'
-        bath_type: 'Type of Restroom'
+        access: 'Long Term?'
+        bath_type: 'Family?'
 
-  restroom:
-    add_new: 'Submit a restroom to our database'
+  home:
+    add_new: 'Submit a home to our database'
     required: '* marks required field'
     guess_location: 'Guess current location'
     directions: 'Directions'
     directions_hint: '(e.g.: third floor in the back, by the dressing rooms...)'
     comments_hint: '(e.g.: you have to be a "paying customer", just act like you are browsing for a bit...)'
     comments: 'Comments'
-    accessible: 'Accessible'
-    not_accessible: 'Not accessible'
-    type:
-      unisex: 'Unisex / Gender neutral'
-      single_stall: 'Gendered single stall or safe place'
-    restsubmit: 'Save Restroom'
+    long_term: 'Long term'
+    short_term: 'Short Term'
+    family: 'Family'
+    individual: 'Individual'
+    restsubmit: 'Save Home'
     rating:
       positive: '%{percentage}% positive'
       unrated: 'Not yet rated'
     upvote: 'Loved it!'
     downvote: 'Not safe'
     confirm:
-      upvote: 'Are you sure you want to upvote to this restroom?'
-      downvote: 'Are you sure you want to down vote this restroom?'
+      upvote: 'Are you sure you want to upvote to this home?'
+      downvote: 'Are you sure you want to down vote this home?'
     flash:
       field: 'A required field has been left blank. Please recheck your submission and submit the form again.'
       unexpected: 'We ran into an unexpected problem, please contact us if the problem continues.'
       upvoteerror: 'There was an unexpected problem upvoting this post.'
-      upvotesuccess: 'This restroom has been upvoted! Thank you for contributing to our community.'
+      upvotesuccess: 'This home has been upvoted! Thank you for contributing to our community.'
       downvoteerror: 'There was an unexpected problem downvoting this post.'
-      downvotesuccess: 'This restroom has been downvoted! Thank you for contributing to our community.'
-      new: 'A new restroom entry has been created for %{name}.'
-      updated: 'This restroom entry has been updated'
-      deleted: 'This restroom entry has been deleted'
+      downvotesuccess: 'This home has been downvoted! Thank you for contributing to our community.'
+      new: 'A new home entry has been created for %{name}.'
+      updated: 'This home entry has been updated'
+      deleted: 'This home entry has been deleted'
       searcherror: 'There was an error searching for your location.'
     contact:
       contactlisting: "Contact us about this post!"
 
-  restrooms:
+  homes:
     nearby:
-      heading: 'Nearby restrooms'
-      body: 'Before you submit a restroom, please ensure it is not already one of the known restrooms nearby.'
-      none: 'No restrooms were found nearby.'
+      heading: 'Nearby homes'
+      body: 'Before you submit a home, please ensure it is not already one of the known homes nearby.'
+      none: 'No homes were found nearby.'
