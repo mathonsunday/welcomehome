@@ -1,6 +1,6 @@
 @javascript
-Feature: Submit a restroom
+Feature: Submit a home
 
-  Scenario: Submit a restroom manually
-    When I submit a restroom in Vancouver
-    Then I should see that the restroom has been created
+  Scenario: Submit a home manually
+    When I submit a home in Vancouver
+    Then I should see that the home has been created

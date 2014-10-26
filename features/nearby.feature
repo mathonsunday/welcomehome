@@ -1,11 +1,11 @@
 @javascript
-Feature: Suggest nearby restrooms
+Feature: Suggest nearby homes
 
-  Scenario: Show nearby restrooms when guessing
-    Given a restroom exists in Winnipeg
+  Scenario: Show nearby homes when guessing
+    Given a home exists in Winnipeg
     When I am in Winnipeg and I guess my location on the submission page
-    Then I should see an existing restroom nearby
+    Then I should see an existing home nearby
 
-  Scenario: Show absence of nearby restrooms
+  Scenario: Show absence of nearby homes
     When I am in Winnipeg and I guess my location on the submission page
-    Then I should not see an existing restroom nearby
+    Then I should not see an existing home nearby
