@@ -4,17 +4,7 @@
   .itemInfo
     .itemName= link_to_unless_current(home.name, home)
     .itemStreet="#{home.street}, #{home.city}, #{home.state}"
-    - if home.rated?
-      - rating_class_name = case RatingLevel.for_home(home)
-      - when RatingLevel.green  then 'greenRating'
-      - when RatingLevel.yellow then 'yellowRating'
-      - when RatingLevel.red    then 'redRating'
-      - else ''
-      %div{:class => "itemRating #{rating_class_name}"}
-        = t('home.rating.positive', percentage: home.rating_percentage.round)
-    - else
-      .itemRating= t('home.rating.unrated')
-
+    
   .itemExtraInfo
     .itemDistance
       - if home.respond_to?(:distance)
