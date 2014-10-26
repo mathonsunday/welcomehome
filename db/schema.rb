@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140423031801) do
+ActiveRecord::Schema.define(version: 20141026162356) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20140423031801) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "restrooms", force: true do |t|
+  create_table "homes", force: true do |t|
     t.string   "name"
     t.string   "street"
     t.string   "city"
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(version: 20140423031801) do
     t.integer  "downvote",   default: 0
     t.integer  "upvote",     default: 0
     t.string   "country"
+    t.integer  "family",     default: 0
+    t.integer  "long_term",  default: 0
   end
 
 end
