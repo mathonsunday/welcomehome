@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.org/RefugeRestrooms/refugerestrooms.svg)](https://travis-ci.org/RefugeRestrooms/refugerestrooms) [![Stories in Ready](https://badge.waffle.io/RefugeRestrooms/refugerestrooms.png?label=ready)](https://waffle.io/RefugeRestrooms/refugerestrooms)
 # Welcome Home
 
+This started as a modification of [Refuge Restrooms](https://github.com/RefugeRestrooms/refugerestrooms) on October 25th, 2014.
+
 ## Tech
 
 * Ruby Version - ruby-2.0.0-p247
