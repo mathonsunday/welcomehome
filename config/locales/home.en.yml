@@ -16,7 +16,7 @@ en:
     guess_location: 'Guess current location'
     directions: 'Directions'
     directions_hint: '(e.g.: a little out of the way, in a residential area)'
-    comments_hint: '(e.g.: has become more crowded recently but still a great place)'
+    comments_hint: '(e.g.: has become more crowded recently)'
     comments: 'Comments'
     long_term: 'Long term'
     short_term: 'Short Term'
