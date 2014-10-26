@@ -5,8 +5,6 @@ FactoryGirl.define do
     city 'San Francisco'
     state 'CA'
     country 'US'
-    upvote 22
-    downvote 11
 
     trait :family do
       family true

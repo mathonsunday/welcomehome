@@ -41,16 +41,6 @@ class Home < ActiveRecord::Base
     "#{street}, #{city}, #{state}, #{country}"
   end
 
-  def rated?
-    upvote > 0 || downvote > 0
-  end
-
-  def rating_percentage
-    return 0 unless rated?
-
-    upvote.to_f / (upvote + downvote).to_f * 100
-  end
-
   # PostgreSQL Full-Text Search for the API.
   def self.text_search(query)
     if query.present?

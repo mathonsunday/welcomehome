@@ -35,11 +35,7 @@ class HomesController < ApplicationController
   end
 
   def update
-    if params[:home][:downvote]
-      Home.increment_counter(:downvote, @home.id)
-    elsif params[:home][:upvote]
-      Home.increment_counter(:upvote, @home.id)
-    elsif @home.update(permitted_params)
+    if @home.update(permitted_params)
       flash[:notice] = I18n.t('home.flash.updated')
     else
       display_errors
