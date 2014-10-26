@@ -2,18 +2,18 @@
   #ada_filter.filter
     .toggle.filter_off
     .toggle.filter_on
-    %label{:for => "ada_filter"}
-      %span.hiddenText ADA Compliant Filter
+    %label{:for => "long_term_filter"}
+      %span.hiddenText Long Term Filter
   #unisex_filter.filter
     .toggle.filter_off
     .toggle.filter_on
-    %label{:for => "unisex_filter"}
-      %span.hiddenText Unisex Filter
+    %label{:for => "family_filter"}
+      %span.hiddenText Family Filter
   .mapToggle.filter.linkbutton
     Map View
 #results
   = content_tag 'div', id: 'mapContainer', data: { latitude: params[:lat], longitude: params[:long] } do
     #mapArea
   #list
-    = render @restrooms
-    = paginate @restrooms
+    = render @homes
+    = paginate @homes

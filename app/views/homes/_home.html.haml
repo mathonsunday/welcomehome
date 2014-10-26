@@ -1,28 +1,28 @@
-%div{:class => "listItem #{restroom.unisex? ? '' : 'not_unisex'} #{restroom.accessible? ? '' : 'not_accessible'}", "data-id" => restroom.id}
+%div{:class => "listItem #{home.long_term? ? '' : 'not_unisex'} #{home.family? ? '' : 'individual'}", "data-id" => home.id}
   .listItemImage
     / image tag goes here
   .itemInfo
-    .itemName= link_to_unless_current(restroom.name, restroom)
-    .itemStreet="#{restroom.street}, #{restroom.city}, #{restroom.state}"
-    - if restroom.rated?
-      - rating_class_name = case RatingLevel.for_restroom(restroom)
+    .itemName= link_to_unless_current(home.name, home)
+    .itemStreet="#{home.street}, #{home.city}, #{home.state}"
+    - if home.rated?
+      - rating_class_name = case RatingLevel.for_home(home)
       - when RatingLevel.green  then 'greenRating'
       - when RatingLevel.yellow then 'yellowRating'
       - when RatingLevel.red    then 'redRating'
       - else ''
       %div{:class => "itemRating #{rating_class_name}"}
-        = t('restroom.rating.positive', percentage: restroom.rating_percentage.round)
+        = t('home.rating.positive', percentage: home.rating_percentage.round)
     - else
-      .itemRating= t('restroom.rating.unrated')
+      .itemRating= t('home.rating.unrated')
 
   .itemExtraInfo
     .itemDistance
-      - if restroom.respond_to?(:distance)
-        = restroom.distance.round(2)
+      - if home.respond_to?(:distance)
+        = home.distance.round(2)
         miles
-    - if restroom.unisex?
-      .unisexRestroom
-        = image_tag "UnisexRestroom.png", {alt: "Unisex Restroom"}
-    - if restroom.accessible?
-      .ADARestroom
-        = image_tag "ADARestroom.png", {alt: "ADA Compliant Restroom"}
+    - if home.long_term?
+      .unisexhome
+        = image_tag "Unisexhome.png", {alt: "Long Term Home"}
+    - if home.accessible?
+      .ADAhome
+        = image_tag "ADAhome.png", {alt: "Family Home"}

@@ -1,25 +1,25 @@
-.listItem.showPageItem{"data-id" => @restroom.id}
-  = render partial: 'restrooms/restroom', locals: { restroom: @restroom }
+.listItem.showPageItem{"data-id" => @home.id}
+  = render partial: 'homes/home', locals: { home: @home }
 .showPageContent
   .ratingscontainer
-    = link_to t('restroom.upvote'),
-                restroom_path(restroom: { upvote: true }),
-                data: { confirm: t('restroom.confirm.upvote') },
+    = link_to t('home.upvote'),
+                home_path(home: { upvote: true }),
+                data: { confirm: t('home.confirm.upvote') },
                 method: 'put',
                 class: 'thumbsButton thumbsUp'
-    = link_to t('restroom.downvote'),
-                restroom_path(restroom: { downvote: true }),
-                data: { confirm: t('restroom.confirm.downvote') },
+    = link_to t('home.downvote'),
+                home_path(home: { downvote: true }),
+                data: { confirm: t('home.confirm.downvote') },
                 method: 'put',
                 class: 'thumbsButton thumbsDown'
   %p
     %strong #{t('restrooom.directions')}:
-    = @restroom.directions
+    = @home.directions
   %p
-    %strong #{t('restroom.comments')}:
-    = @restroom.comment
-  %p= link_to t('restroom.contact.contactlisting'), contact_path(restroom_id: @restroom.id, restroom_name: @restroom.name)
+    %strong #{t('home.comments')}:
+    = @home.comment
+  %p= link_to t('home.contact.contactlisting'), contact_path(home_id: @home.id, home_name: @home.name)
   #map
-    %div#mapArea{ data: { latitude: @restroom.latitude, longitude: @restroom.longitude } }
+    %div#mapArea{ data: { latitude: @home.latitude, longitude: @home.longitude } }
   %hr
-  = render partial: 'layouts/disqus_tag', locals: { identifier: "restroom-#{@restroom.id}", title: @restroom.name, url: request.original_url }
+  = render partial: 'layouts/disqus_tag', locals: { identifier: "home-#{@home.id}", title: @home.name, url: request.original_url }

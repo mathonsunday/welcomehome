@@ -1,8 +1,8 @@
-- if @restrooms.empty?
+- if @homes.empty?
   .none
     %p= t('.none')
 - else
   %h2= t('.heading')
   %p= t('.body')
-  .minimalRestroomList= render @restrooms
+  .minimalhomeList= render @homes
   .clearfix
