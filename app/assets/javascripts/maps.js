@@ -266,6 +266,6 @@ function guessPosition (coords, callback) {
 $(function(){
 	var $map = $('#mapArea');
 	if($map.length > 0) {
-		initMap($map.data('latitude'), $map.data('longitude'), showMarkerImage);
+		initMap($map.data('latitude'), $map.data('longitude'), null);
 	}
 });

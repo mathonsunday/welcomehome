@@ -1,18 +1,11 @@
 %div{:class => "listItem #{home.long_term? ? '' : 'not_unisex'} #{home.family? ? '' : 'individual'}", "data-id" => home.id}
-  .listItemImage
-    / image tag goes here
   .itemInfo
     .itemName= link_to_unless_current(home.name, home)
     .itemStreet="#{home.street}, #{home.city}, #{home.state}"
-    
+
   .itemExtraInfo
     .itemDistance
       - if home.respond_to?(:distance)
         = home.distance.round(2)
         miles
-    - if home.long_term?
-      .unisexhome
-        = image_tag "Unisexhome.png", {alt: "Long Term Home"}
-    - if home.accessible?
-      .ADAhome
-        = image_tag "ADAhome.png", {alt: "Family Home"}
+
