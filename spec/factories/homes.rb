@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :restroom do
+  factory :home do
     name 'Moonlight Café'
     street '123 Example St.'
     city 'San Francisco'
@@ -8,24 +8,24 @@ FactoryGirl.define do
     upvote 22
     downvote 11
 
-    trait :unisex do
-      unisex true
+    trait :family do
+      family true
     end
 
-    trait :ada do
+    trait :long_term do
       accessible true
     end
 
     trait :comment do
-      comment 'Spacious, single-stall with auto-flushing toilet and ADA railings.'
+      comment 'Spacious, single-stall with auto-flushing toilet and long_term railings.'
     end
 
     trait :directions do
       directions 'Near the back, past the counter on the left.'
     end
 
-    factory :unisex_restroom, traits: [:unisex]
-    factory :ada_restroom, traits: [:ada]
-    factory :unisex_and_ada_restroom, traits: [:unisex, :ada]
+    factory :family_home, traits: [:family]
+    factory :long_term_home, traits: [:long_term]
+    factory :family_and_long_term_home, traits: [:family, :long_term]
   end
 end

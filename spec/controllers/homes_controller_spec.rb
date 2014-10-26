@@ -1,24 +1,24 @@
 require 'spec_helper'
 
-describe RestroomsController do
+describe HomesController do
   it "should get index" do
     get :index
     expect(response).to be_success
   end
 
   context "voting" do
-    let(:restroom) { FactoryGirl.create(:restroom) }
+    let(:home) { FactoryGirl.create(:home) }
 
     it "should downvote" do
       expect {
-        post :update, id: restroom.id, restroom: { downvote: true }
-      }.to change { restroom.reload.downvote }.by 1
+        post :update, id: home.id, home: { downvote: true }
+      }.to change { home.reload.downvote }.by 1
     end
 
     it "should upvote" do
       expect {
-        post :update, id: restroom.id, restroom: { upvote: true }
-      }.to change { restroom.reload.upvote }.by 1
+        post :update, id: home.id, home: { upvote: true }
+      }.to change { home.reload.upvote }.by 1
     end
   end
 end
